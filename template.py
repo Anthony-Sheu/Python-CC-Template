@@ -38,9 +38,9 @@ def kmp(txt, pat):
 readline = lambda: sys.stdin.readline().strip()
 readint = lambda: int(sys.stdin.readline())
 printf = lambda x: sys.stdout.write(f"{x}\n")
-prints = lambda x, y=None: sys.stdout.write(x + y)
+prints = lambda x, y="\n": sys.stdout.write(x + y)
 printline = lambda x: list(map(printf, x))
-printeach = lambda x, y=None: print(*x, sep=y)  # x is iterable and y is separator
+printeach = lambda x, y="": print(*x, sep=y)  # x is iterable and y is separator
 gi = lambda: list(map(int, readline().split()))
 gs = lambda: readline().strip().split()
 emp = lambda x: [0]*x
