@@ -44,7 +44,7 @@ printline = lambda x: list(map(printf, x))
 printeach = lambda x, y="": print(*x, sep=y)  # x is iterable and y is separator
 gi = lambda: list(map(int, readline().split()))
 gs = lambda: readline().strip().split()
-emp = lambda x, y: [x for _ in range(y)] 
+emp = lambda x, y: [x for _ in range(y)]  # only use for 1d arrays
 fill = lambda x: list(range(1, x+1))
 flat = lambda x, l: x.join(map(str, l))  # " \n"[i == n] also works
 
