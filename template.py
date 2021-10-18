@@ -1,4 +1,5 @@
 import sys
+sys.setrecursionlimit(1000000)
 
 def swap(x, y, arr): arr[x], arr[y] = arr[y], arr[x]
 
