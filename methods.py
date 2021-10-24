@@ -7,9 +7,8 @@ def gcd(x, y):
 def lcm(x, y):
     return x // gcd(x, y) * y
 ###################################
-MOD = int(1e9+7)
 def fast_power(base, power):
-    global MOD
+    MOD = int(1e9 + 7)
     result = 1
     while power > 0:
         if power % 2 == 1:
@@ -104,4 +103,48 @@ def kmp(txt, pat):
     return -1
 ##########################################################
 def swap(x, y, arr): arr[x], arr[y] = arr[y], arr[x]
+##########################################################
+def dfs(vis, x, y, stack):  # vis = [False for i in range(n+1)], stack = [], g = graph
+    stack.append(x)
+    if x == y: return stack
+    vis[x] = 1
+    if len(g[x]):
+        for j in g[x]:
+            if not vis[j]: stack = dfs(vis, j, y, stack)
+    return stack
+##########################################################
+def bfs(a, b):
+    q = g[a][:]
+    vis = set(q)
+    while q:
+        temp = q.pop(0)
+        for e in g[temp]:
+            if e not in vis: q.append(e); vis.add(e)
+    return b in vis
+##########################################################
+def min_path(a):  # returns distance between two points on a graph
+    q = [[i, 1] for i in g[a]]
+    vis = set(g[a])
+    while q:
+        pos, dist = q.pop(0)
+        if pos == a: return dist
+        for e in g[pos]:
+            if e not in vis: q.append([e, dist+1]); vis.add(e)
+    return max_int
+##########################################################
+def sieve(n):
+    prime = emp(0, 100001)  # set 100001 to the max bounds
+    dp = emp(0, 100001)  # use dp as PSA
+    prime[1] = 1; prime[0] = 1
+    i = 2
+    while pow(i, 2) < n+1:
+        if not prime[i]:
+            for j in range(pow(i, 2), n + 1, i):
+                prime[j] = 1
+        i += 1
+    r = 0
+    for i in range(1, n + 1):
+        if not prime[i]:
+            r += i
+        dp[i] = r
 ##########################################################
