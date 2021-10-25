@@ -122,7 +122,7 @@ def bfs(a, b):
             if e not in vis: q.append(e); vis.add(e)
     return b in vis
 ##########################################################
-def min_path(a, b):  # returns distance between two points on a graph
+def min_dist(a, b):  # returns distance between two points on a graph
     q = [[i, 1] for i in g[a]]
     vis = set(g[a])
     while q:
@@ -131,6 +131,16 @@ def min_path(a, b):  # returns distance between two points on a graph
         for e in g[pos]:
             if e not in vis: q.append([e, dist+1]); vis.add(e)
     return max_int
+##########################################################
+def min_path(x, y):  # returns a list of the minimum path from one node to another, otherwise 0
+    q = deque([[x, [x]]])
+    vis = emp(0, n+1)
+    while q:
+        pos, past = q.popleft()
+        if pos == y: return past
+        for i in range(len(g[pos])):
+            if not vis[g[pos][i]]: vis[g[pos][i]] = 1; q.append([g[pos][i], past + [g[pos][i]]])
+    return 0
 ##########################################################
 def sieve(n):
     prime = emp(0, 100001)  # set 100001 to the max bounds
