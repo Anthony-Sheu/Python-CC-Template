@@ -122,12 +122,12 @@ def bfs(a, b):
             if e not in vis: q.append(e); vis.add(e)
     return b in vis
 ##########################################################
-def min_path(a):  # returns distance between two points on a graph
+def min_path(a, b):  # returns distance between two points on a graph
     q = [[i, 1] for i in g[a]]
     vis = set(g[a])
     while q:
         pos, dist = q.pop(0)
-        if pos == a: return dist
+        if pos == b: return dist
         for e in g[pos]:
             if e not in vis: q.append([e, dist+1]); vis.add(e)
     return max_int
