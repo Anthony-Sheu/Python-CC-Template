@@ -123,18 +123,20 @@ def bfs(a, b):
     return b in vis
 ##########################################################
 def min_dist(a, b):  # returns distance between two points on a graph
-    q = [[i, 1] for i in g[a]]
-    vis = set(g[a])
+    q = [[a, 0]]
+    vis = emp(0, n+1)
+    vis[a] = -1
     while q:
         pos, dist = q.pop(0)
         if pos == b: return dist
         for e in g[pos]:
-            if e not in vis: q.append([e, dist+1]); vis.add(e)
-    return max_int
+            if not vis[e]: q.append([e, dist+1]); vis[e] = dist+1
+    return -1
 ##########################################################
 def min_path(x, y):  # returns a list of the minimum path from one node to another, otherwise 0
     q = deque([[x, [x]]])
     vis = emp(0, n+1)
+    vis[x] = 1
     while q:
         pos, past = q.popleft()
         if pos == y: return past
