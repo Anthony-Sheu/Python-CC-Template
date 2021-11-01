@@ -1,5 +1,5 @@
 import sys
-from collections import deque
+import collections
 sys.setrecursionlimit(1000000)  # comment this out if you are getting memory error on pypy3
 readline = lambda: sys.stdin.readline().strip()
 readint = lambda: int(sys.stdin.readline())
