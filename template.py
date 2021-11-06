@@ -3,10 +3,10 @@ import collections
 sys.setrecursionlimit(1000000)  # comment this out if you are getting memory error on pypy3
 readline = lambda: sys.stdin.readline().strip()
 readint = lambda: int(sys.stdin.readline())
-printf = lambda x: sys.stdout.write(f"{x}\n")
+printf = lambda x: sys.stdout.write(f"{x}\n")  # comment out when using py2
 prints = lambda x, y="\n": sys.stdout.write(x + y)
 printline = lambda x: list(map(printf, x))
-printeach = lambda x, y="": print(*x, sep=y)  # x is iterable and y is separator
+printeach = lambda x, y="": print(*x, sep=y)  # x is iterable and y is separator, also comment out when using py2
 gi = lambda: list(map(int, readline().split()))
 gs = lambda: readline().strip().split()
 emp = lambda x, y: [x for _ in range(y)]  # only use for 1d arrays
