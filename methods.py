@@ -144,6 +144,12 @@ def min_path(x, y):  # returns a list of the minimum path from one node to anoth
             if not vis[g[pos][i]]: vis[g[pos][i]] = 1; q.append([g[pos][i], past + [g[pos][i]]])
     return 0
 ##########################################################
+def dfs(x, y):  # x is position and y is distance, start with y = 1
+    dist[x] += y
+    for e in g[x]:
+        if not dist[e]:
+            dfs(e, y+1)
+##########################################################
 def sieve(n):
     prime = emp(0, 100001)  # set 100001 to the max bounds
     dp = emp(0, 100001)  # use dp as PSA
