@@ -4,7 +4,7 @@ import bisect
 # sys.setrecursionlimit(1000000)  # comment this out if you are getting memory error on pypy3
 readline = lambda: sys.stdin.readline().strip()
 readint = lambda: int(sys.stdin.readline())
-printf = lambda x: sys.stdout.write("%d" % x)  # comment out when using py2
+printf = lambda x: sys.stdout.write("%d\n" % x)  # comment out when using py2
 prints = lambda x: sys.stdout.write(x)
 printline = lambda x: list(map(printf, x))
 # printeach = lambda x, y="": print(*x, sep=y)  # x is iterable and y is separator, also comment out when using py2
