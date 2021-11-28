@@ -1,3 +1,4 @@
+# Python template by Anthony Sheu #
 import sys
 import collections
 import bisect
