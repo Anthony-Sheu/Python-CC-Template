@@ -14,5 +14,5 @@ gs = lambda: readline().strip().split()
 emp = lambda x, y: [x]*y  # only use for 1d arrays
 fill = lambda x: list(range(1, x+1))
 flat = lambda x, l: x.join(map(str, l))  # " \n"[i == n] also works
-max_int, min_int, MOD = sys.maxsize, -sys.maxsize, int(1e9+7)
+mat, mit, MOD = sys.maxsize, -sys.maxsize, int(1e9+7)
 ######################## End of Template #######################
