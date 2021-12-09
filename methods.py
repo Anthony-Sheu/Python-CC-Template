@@ -257,7 +257,7 @@ def mst():  # 0 indexed, using adj-matrix
         vis[v] = 1
         for i in range(n):
             if not vis[i] and dist[i] > g[v][i]: dist[v] = g[v][i]
-    return d
+    return dist
 #########################################################
 # DSU #
 def findset(d):
