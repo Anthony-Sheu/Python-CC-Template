@@ -316,19 +316,19 @@ def update(pos, val, num, l, r):
     seg[num] = min(seg[2 * num], seg[2 * num+1])
 #########################################################
 # Dijkstra #
-def dijkstra_weighted():  # import heapq as hp
+def dijkstra_weighted():  # from heapq import *
     dist = emp(mat, n+1)
     vis = emp(0, n+1)
     dist[1] = 0  # set 1 as your starting node
     q = [1]
-    hp.heapify(q)
+    heapify(q)
     while q:
-        pos = hp.heappop(q)
+        pos = heappop(q)
         vis[pos] = 1
         for e, w in g[pos]:
             if not vis[e]:
                 if dist[pos]+w < dist[e]:
-                    hp.heappush(q, e)
+                    heappush(q, e)
                     dist[e] = dist[pos]+w
     return dist
 #########################################################
