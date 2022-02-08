@@ -1,8 +1,9 @@
 # Python template by Anthony Sheu #
-import sys
-import collections
-import bisect
-import math
+# import sys
+# from collections import *
+# import bisect
+# import math
+# from heapq import *
 # sys.setrecursionlimit(1000000)  # comment this out if you are getting memory error on pypy3
 readline = lambda: sys.stdin.readline().strip()
 readint = lambda: int(sys.stdin.readline())
