@@ -10,7 +10,7 @@ def Sieve(n):
 
 def SegmentedSieve(n):
     lim = int(__import__("math").sqrt(n)+1)
-    Sieve(lim)
+    Sieve(lim)  # primes up to sqrt(n)
     lo, hi = lim, lim*2
     while lo < n:
         if hi >= n: hi = n
@@ -19,7 +19,7 @@ def SegmentedSieve(n):
             lolim = int(__import__('math').floor(lo / prime[i])*prime[i])
             if lolim < lo: lolim += prime[i]
             for j in range(lolim, hi, prime[i]): prime[j-lo] = 0
-        for i in range(lo, hi):
+        for i in range(lo, hi): 
             if prime[i-lo]: print(i)
         lo += lim
         hi += lim
