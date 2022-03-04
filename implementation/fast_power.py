@@ -7,3 +7,10 @@ def fast_power(base, power):
         power //= 2
         base *= base % MOD
     return result
+#####################################
+def qpow(base, exp):
+    if not exp: return 1
+    x = qpow(base, exp>>1)
+    x *= x
+    if exp%2: x *= base
+    return x
