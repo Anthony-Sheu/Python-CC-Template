@@ -1,5 +1,5 @@
 def update(pos, val, bit, n):
-    while pos < n:
+    while pos < n:  # this is for 0 indexed bit
         bit[pos] += val
         pos += pos & -pos
 
